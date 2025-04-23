@@ -34,3 +34,11 @@ body {
   background: rgb(23, 23, 23);
   transform: translateX(-100%);
 }
+
+.container:hover .content {
+  transform: translateX(0);
+}
+
+.container:hover img {
+  transform: translateX(100%);
+}
