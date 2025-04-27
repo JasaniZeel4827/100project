@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
-
 :root {
   --primary-color: #22254b;
   --secondary-color: #373b69;
@@ -22,7 +21,6 @@ header {
   align-items: center;
   background-color: var(--secondary-color);
 }
-
 header h1 {
   color: #eee;
   padding: 0;
@@ -39,11 +37,12 @@ header h1 {
   padding: 0.5rem 1rem;
   color: #fff;
 }
-
+.search::-moz-placeholder {
+  color: #7378c5;
+}
 .search::placeholder {
   color: #7378c5;
 }
-
 .search:focus {
   outline: none;
   background-color: var(--primary-color);
@@ -64,11 +63,9 @@ main {
   overflow: hidden;
   border-radius: 3px;
 }
-
 .movie img {
   width: 100%;
 }
-
 .movie-info {
   color: #eee;
   display: flex;
@@ -77,31 +74,25 @@ main {
   padding: 0.5rem 1rem 1rem;
   letter-spacing: 0.5px;
 }
-
 .movie-info h3 {
   margin-top: 0;
 }
-
 .movie-info span {
   background-color: var(--primary-color);
   padding: 0.25rem 0.5rem;
   border-radius: 3px;
   font-weight: bold;
 }
-
 .movie-info span.green {
   color: lightgreen;
 }
-
 .movie-info span.orange {
   color: orange;
 }
-
 .movie-info span.red {
   color: red;
 }
-
-.overview {
+.movie .overview {
   background-color: #fff;
   padding: 2rem;
   position: absolute;
@@ -113,7 +104,6 @@ main {
   overflow-y: auto;
   transition: transform 0.3s ease-in;
 }
-
 .movie:hover .overview {
   transform: translateY(0);
 }
@@ -127,8 +117,7 @@ main {
   header {
     flex-direction: column;
   }
-
   header h1 {
     padding: 0.5rem 1rem;
   }
-}
+}/*# sourceMappingURL=style.css.map */
