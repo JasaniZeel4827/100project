@@ -1,0 +1,46 @@
+body {
+  background: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#switch {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+#switch:checked + label {
+  background: white;
+}
+#switch:checked + label::after {
+  background: black;
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+}
+
+label {
+  display: block;
+  width: 100px;
+  height: 50px;
+  background: black;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  transition: 0.5s;
+}
+label::after {
+  content: "";
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  background: white;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  transition: 0.5s;
+}
+label:active::after {
+  width: 60px;
+}/*# sourceMappingURL=style.css.map */

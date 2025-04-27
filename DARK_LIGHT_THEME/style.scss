@@ -1,0 +1,67 @@
+// Variables ડિકલેર કરો
+$primary-color: white;
+$primary-label: black;
+$secondary-label: white;
+$white-ball: white;
+$black-ball: black;
+$toggle-width: 100px;
+$toggle-height: 50px;
+$ball-size: 40px;
+
+// Body સ્ટાઇલિંગ
+body {
+  background: $primary-color;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Toggle Switch કમ્પોનન્ટ
+#switch {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+
+  // Checked સ્ટેટ માટે નેસ્ટિંગ
+  &:checked {
+    + label {
+      background: $secondary-label;
+      
+      &::after {
+        background: $black-ball;
+        left: calc(100% - 5px);
+        transform: translateX(-100%);
+      }
+    }
+  }
+}
+
+label {
+  display: block;
+  width: $toggle-width;
+  height: $toggle-height;
+  background: $primary-label;
+  border-radius: $toggle-height;
+  position: relative;
+  cursor: pointer;
+  transition: 0.5s;
+
+  // Ball સ્ટાઇલિંગ
+  &::after {
+    content: "";
+    width: $ball-size;
+    height: $ball-size;
+    border-radius: $ball-size;
+    background: $white-ball;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    transition: 0.5s;
+  }
+
+  // Active સ્ટેટ
+  &:active::after {
+    width: $ball-size + 20px;
+  }
+}
