@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
+
 * {
   box-sizing: border-box;
 }
@@ -34,9 +35,10 @@ textarea {
   padding: 10px;
   margin: 0 0 20px;
   font-size: 16px;
-}
-textarea:focus {
-  outline: 0;
+
+  &:focus {
+    outline: 0;
+  }
 }
 
 .tag {
@@ -47,7 +49,8 @@ textarea:focus {
   margin: 0 5px 10px 0;
   font-size: 14px;
   display: inline-block;
+
+  &.highlight {
+    background-color: #273c75;
+  }
 }
-.tag.highlight {
-  background-color: #273c75;
-}/*# sourceMappingURL=style.css.map */
