@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
 * {
   box-sizing: border-box;
 }
@@ -26,34 +27,39 @@ body {
   text-align: center;
   max-width: 100%;
   width: 800px;
+
+  h3 {
+    margin: 0;
+    opacity: 0.5;
+    letter-spacing: 2px;
+  }
+
+  .joke {
+    font-size: 30px;
+    letter-spacing: 1px;
+    line-height: 40px;
+    margin: 50px auto;
+    max-width: 600px;
+  }
+
+  .btn {
+    /* background-color: #9f68e0; */
+    background: linear-gradient(to right, #ff6600, #ffa94d); /* orange to light orange */
+    color: #fff;
+    border: 0;
+    border-radius: 10px;
+    /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1); */
+    box-shadow: 0 8px 16px rgba(255, 102, 0, 0.3); /* orange shadow */
+    padding: 14px 40px;
+    font-size: 16px;
+    cursor: pointer;
+
+    &:active {
+      transform: scale(0.98);
+    }
+
+    &:focus {
+      outline: 0;
+    }
+  }
 }
-.container h3 {
-  margin: 0;
-  opacity: 0.5;
-  letter-spacing: 2px;
-}
-.container .joke {
-  font-size: 30px;
-  letter-spacing: 1px;
-  line-height: 40px;
-  margin: 50px auto;
-  max-width: 600px;
-}
-.container .btn {
-  /* background-color: #9f68e0; */
-  background: linear-gradient(to right, #ff6600, #ffa94d); /* orange to light orange */
-  color: #fff;
-  border: 0;
-  border-radius: 10px;
-  /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1); */
-  box-shadow: 0 8px 16px rgba(255, 102, 0, 0.3); /* orange shadow */
-  padding: 14px 40px;
-  font-size: 16px;
-  cursor: pointer;
-}
-.container .btn:active {
-  transform: scale(0.98);
-}
-.container .btn:focus {
-  outline: 0;
-}/*# sourceMappingURL=style.css.map */
