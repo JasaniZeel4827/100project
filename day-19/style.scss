@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Heebo:300&display=swap");
+
 * {
   box-sizing: border-box;
 }
@@ -10,12 +11,13 @@
 
 html {
   transition: all 0.5s ease-in;
-}
-html.dark {
-  --primary-color: #fff;
-  --secondary-color: #333;
-  background-color: #111;
-  color: var(--primary-color);
+
+  &.dark {
+    --primary-color: #fff;
+    --secondary-color: #333;
+    background-color: #111;
+    color: var(--primary-color);
+  }
 }
 
 body {
@@ -38,9 +40,10 @@ body {
   top: 10px;
   right: 10px;
   cursor: pointer;
-}
-.toggle:focus {
-  outline: none;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 .clock-container {
@@ -65,18 +68,21 @@ body {
   width: 3px;
   transform-origin: bottom center;
   transition: all 0.5s ease-in;
-}
-.needle.hour {
-  transform: translate(-50%, -100%) rotate(0deg);
-}
-.needle.minute {
-  transform: translate(-50%, -100%) rotate(0deg);
-  height: 100px;
-}
-.needle.second {
-  background-color: #e74c3c;
-  transform: translate(-50%, -100%) rotate(0deg);
-  height: 100px;
+
+  &.hour {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+
+  &.minute {
+    transform: translate(-50%, -100%) rotate(0deg);
+    height: 100px;
+  }
+
+  &.second {
+    background-color: #e74c3c;
+    transform: translate(-50%, -100%) rotate(0deg);
+    height: 100px;
+  }
 }
 
 .center-point {
@@ -88,17 +94,18 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-}
-.center-point::after {
-  content: "";
-  background-color: var(--primary-color);
-  width: 5px;
-  height: 5px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
+
+  &::after {
+    content: "";
+    background-color: var(--primary-color);
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+  }
 }
 
 .time {
@@ -110,17 +117,18 @@ body {
   font-size: 14px;
   letter-spacing: 0.3px;
   text-transform: uppercase;
+
+  .circle {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border-radius: 50%;
+    height: 18px;
+    width: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    line-height: 18px;
+    transition: all 0.5s ease-in;
+  }
 }
-.date .circle {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-  border-radius: 50%;
-  height: 18px;
-  width: 18px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  line-height: 18px;
-  transition: all 0.5s ease-in;
-}/*# sourceMappingURL=style.css.map */
