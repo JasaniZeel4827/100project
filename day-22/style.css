@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
-
 * {
   box-sizing: border-box;
 }
@@ -26,7 +25,6 @@ canvas {
   width: 804px;
   padding: 1rem;
 }
-
 .toolbox > * {
   background-color: #fff;
   border: none;
@@ -40,7 +38,6 @@ canvas {
   padding: 0.25rem;
   cursor: pointer;
 }
-
 .toolbox > *:last-child {
   margin-left: auto;
-}
+}/*# sourceMappingURL=style.css.map */
