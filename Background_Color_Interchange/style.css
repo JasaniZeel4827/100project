@@ -29,20 +29,20 @@ body {
   text-transform: uppercase;
 }
 .btn.purple {
-  background-color: purple;
+  background-color: #C05746;
 }
 .btn.blue {
-  background-color: blue;
+  background-color: #ADC698;
 }
 .btn.red {
-  background-color: red;
+  background-color: #D0E3C4;
 }
 .btn.green {
-  background-color: green;
+  background-color: #242038;
 }
 .btn.yellow {
-  background-color: yellow;
+  background-color: #503047;
 }
 .btn.teal {
-  background-color: teal;
+  background-color: #348AA7;
 }/*# sourceMappingURL=style.css.map */
