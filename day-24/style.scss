@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
 * {
   box-sizing: border-box;
 }
@@ -23,27 +24,31 @@ img {
   border-radius: 10px;
   overflow: hidden;
   width: 350px;
-}
-.card-header {
-  height: 200px;
-}
-.card-header img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  height: 100%;
-  width: 100%;
-}
-.card-content {
-  background-color: #fff;
-  padding: 30px;
-}
-.card-title {
-  height: 20px;
-  margin: 0;
-}
-.card-excerpt {
-  color: #777;
-  margin: 10px 0 20px;
+
+  &-header {
+    height: 200px;
+
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &-content {
+    background-color: #fff;
+    padding: 30px;
+  }
+
+  &-title {
+    height: 20px;
+    margin: 0;
+  }
+
+  &-excerpt {
+    color: #777;
+    margin: 10px 0 20px;
+  }
 }
 
 .author {
@@ -63,14 +68,21 @@ img {
   justify-content: space-around;
   margin-left: 10px;
   width: 100px;
-}
-.author-info small {
-  color: #aaa;
-  margin-top: 5px;
+
+  small {
+    color: #aaa;
+    margin-top: 5px;
+  }
 }
 
 .animated-bg {
-  background-image: linear-gradient(to right, #f6f7f8 0%, #edeef1 10%, #f6f7f8 20%, #f6f7f8 100%);
+  background-image: linear-gradient(
+    to right,
+    #f6f7f8 0%,
+    #edeef1 10%,
+    #f6f7f8 20%,
+    #f6f7f8 100%
+  );
   background-size: 200% 100%;
   animation: bgPos 1s linear infinite;
 }
@@ -90,4 +102,4 @@ img {
   100% {
     background-position: -150% 0;
   }
-}/*# sourceMappingURL=style.css.map */
+}
