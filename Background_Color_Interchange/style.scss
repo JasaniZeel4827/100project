@@ -1,54 +1,55 @@
+// Variables
+$colors: (
+  "purple": purple,
+  "blue": blue,
+  "red": red,
+  "green": green,
+  "yellow": yellow,
+  "teal": teal
+);
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    background: rgb(28, 28, 35);
-  }
-  
-  .content-container {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .btn {
-    padding: 10px 20px;
-    border: none;
-    color: #fff;
-    border: 2px solid white;
-    width: 120px;
-    height: 100px;
-    margin: 20px;
-    cursor: pointer;
-    font-weight: bold;
-    text-transform: uppercase;
-  
-    &.purple {
-      background-color: #C05746;
-    }
-  
-    &.blue {
-      background-color: #ADC698;
-    }
-  
-    &.red {
-      background-color: #D0E3C4;
-    }
-  
-    &.green {
-      background-color: #242038;
-    }
-  
-    &.yellow {
-      background-color: #503047;
-    }
-  
-    &.teal {
-      background-color: #348AA7;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(28, 28, 35);
+  transition: background 0.3s ease;
+
+  // Body color classes
+  @each $name, $color in $colors {
+    &.#{$name} {
+      background-color: $color;
     }
   }
+}
+
+.content-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  color: #fff;
+  border: 2px solid white;
+  width: 120px;
+  height: 100px;
+  margin: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  // Button color variations
+  @each $name, $color in $colors {
+    &.#{$name} {
+      background-color: $color;
+    }
+  }
+}

@@ -6,6 +6,25 @@
 
 body {
   background: rgb(28, 28, 35);
+  transition: background 0.3s ease;
+}
+body.purple {
+  background-color: purple;
+}
+body.blue {
+  background-color: blue;
+}
+body.red {
+  background-color: red;
+}
+body.green {
+  background-color: green;
+}
+body.yellow {
+  background-color: yellow;
+}
+body.teal {
+  background-color: teal;
 }
 
 .content-container {
@@ -29,20 +48,20 @@ body {
   text-transform: uppercase;
 }
 .btn.purple {
-  background-color: #C05746;
+  background-color: purple;
 }
 .btn.blue {
-  background-color: #ADC698;
+  background-color: blue;
 }
 .btn.red {
-  background-color: #D0E3C4;
+  background-color: red;
 }
 .btn.green {
-  background-color: #242038;
+  background-color: green;
 }
 .btn.yellow {
-  background-color: #503047;
+  background-color: yellow;
 }
 .btn.teal {
-  background-color: #348AA7;
+  background-color: teal;
 }/*# sourceMappingURL=style.css.map */
