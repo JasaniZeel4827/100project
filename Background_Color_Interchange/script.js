@@ -2,15 +2,11 @@ const btns = document.querySelectorAll(".btn");
 
 btns.forEach((btn) => {
   btn.addEventListener("click", () => {
-    const color = btn.value; // Get button's value (e.g., "purple")
-    changeBackground(color);
+    number = btn.value;
+    changeBackground(number);
   });
 });
 
-function changeBackground(color) {
-  document.body.className = ""; // Remove existing classes
-  document.body.classList.add(color); // Add new color class
-}
 const body = document.body;
 
 function changeBackground(number) {
@@ -38,9 +34,3 @@ function changeBackground(number) {
       break;
   }
 }
-
-
-
-
-
-

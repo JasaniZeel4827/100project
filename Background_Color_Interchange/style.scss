@@ -1,13 +1,3 @@
-// Variables
-$colors: (
-  "purple": purple,
-  "blue": blue,
-  "red": red,
-  "green": green,
-  "yellow": yellow,
-  "teal": teal
-);
-
 * {
   margin: 0;
   padding: 0;
@@ -16,14 +6,6 @@ $colors: (
 
 body {
   background: rgb(28, 28, 35);
-  transition: background 0.3s ease;
-
-  // Body color classes
-  @each $name, $color in $colors {
-    &.#{$name} {
-      background-color: $color;
-    }
-  }
 }
 
 .content-container {
@@ -46,10 +28,27 @@ body {
   font-weight: bold;
   text-transform: uppercase;
 
-  // Button color variations
-  @each $name, $color in $colors {
-    &.#{$name} {
-      background-color: $color;
-    }
+  &.purple {
+    background-color: purple;
+  }
+
+  &.blue {
+    background-color: blue;
+  }
+
+  &.red {
+    background-color: red;
+  }
+
+  &.green {
+    background-color: green;
+  }
+
+  &.yellow {
+    background-color: yellow;
+  }
+
+  &.teal {
+    background-color: teal;
   }
 }
