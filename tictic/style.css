@@ -1,0 +1,65 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+}
+
+.gameBoard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    max-width: 300px;
+    margin: 20px auto;
+}
+
+.cell {
+    background-color: white;
+    border: 1px solid #ddd;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.cell:hover {
+    background-color: #f0f0f0;
+}
+
+#restartBtn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#restartBtn:hover {
+    background-color: #45a049;
+}
+
+#result {
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.radio-group {
+    margin: 10px 0;
+}
+
+.radio-group input {
+    margin: 0 5px;
+}
+
+.game-info {
+    margin: 15px 0;
+}
