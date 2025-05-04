@@ -3,7 +3,7 @@
 }
 
 body {
-  background: rgb(26, 25, 25);
+  background: rgb(131, 115, 115);
   font-family: sans-serif;
   display: flex;
   justify-content: center;
@@ -14,7 +14,7 @@ body {
 }
 
 .panel-container {
-  background-color: #1d1c1c;
+  background-color: #1f1232;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
   border-radius: 4px;
   font-size: 90%;
