@@ -24,3 +24,6 @@ const createNotification = (message = null, type = null) => {
 };
 
 button.addEventListener("click", () => createNotification());
+
+
+
