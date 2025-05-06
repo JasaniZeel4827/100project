@@ -14,4 +14,13 @@ const getRandomMessage = () =>
 
 const getRandomType = () => types[Math.floor(Math.random() * types.length)];
 
+const createNotification = (message = null, type = null) => {
+  const notif = document.createElement("div");
+  notif.classList.add("toast");
+  notif.classList.add(type ? type : getRandomType());
+  notif.innerText = message ? message : getRandomMessage();
+  toasts.appendChild(notif);
+  setTimeout(() => notif.remove(), 3000);
+};
 
+button.addEventListener("click", () => createNotification());
