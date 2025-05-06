@@ -7,3 +7,11 @@ const messages = [
   "Message Three",
   "Message Four",
 ];
+const types = ["info", "success", "error"];
+
+const getRandomMessage = () =>
+  messages[Math.floor(Math.random() * messages.length)];
+
+const getRandomType = () => types[Math.floor(Math.random() * types.length)];
+
+
