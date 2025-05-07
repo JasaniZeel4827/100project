@@ -41,7 +41,11 @@ const createErrorCard = (message) => {
 const addReposToCard = (repos) => {
   const reposElement = document.getElementById("repos");
   repos.slice(0, 5).forEach((repo) => {
-    
+    const repoElement = document.createElement("a");
+    repoElement.classList.add("repo");
+    repoElement.href = repo.html_url;
+    repoElement.target = "_blank";
+    repoElement.innerText = repo.name;
     reposElement.appendChild(repoElement);
   });
 };
