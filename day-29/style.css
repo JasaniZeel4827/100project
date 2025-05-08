@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Oswald", sans-serif;
+  text-align: center;
+  overflow: hidden;
+  margin: 0;
+}
+
+h3 {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+small {
+  display: block;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.fa-heart {
+  color: red;
+}
+
