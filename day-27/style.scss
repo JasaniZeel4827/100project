@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
+
 * {
   box-sizing: border-box;
 }
@@ -24,12 +25,14 @@ body {
   border-radius: 5px;
   border: none;
   cursor: pointer;
-}
-.btn:focus {
-  outline: none;
-}
-.btn:active {
-  transform: scale(0.98);
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
 }
 
 #toasts {
@@ -46,13 +49,16 @@ body {
   border-radius: 5px;
   padding: 1rem 2rem;
   margin: 0.5rem;
+
+  &.info {
+    color: rebeccapurple;
+  }
+
+  &.success {
+    color: green;
+  }
+
+  &.error {
+    color: red;
+  }
 }
-.toast.info {
-  color: rebeccapurple;
-}
-.toast.success {
-  color: green;
-}
-.toast.error {
-  color: red;
-}/*# sourceMappingURL=style.css.map */
