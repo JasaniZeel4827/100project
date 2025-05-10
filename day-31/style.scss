@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+
 * {
   box-sizing: border-box;
 }
@@ -41,18 +42,20 @@ h2 {
   padding: 12px 10px;
   height: 50px;
   width: 100%;
-}
-.result-container #result {
-  word-wrap: break-word;
-  max-width: calc(100% - 40px);
-}
-.result-container .btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  width: 40px;
-  height: 40px;
-  font-size: 20px;
+
+  #result {
+    word-wrap: break-word;
+    max-width: calc(100% - 40px);
+  }
+
+  .btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
 }
 
 .btn {
@@ -62,10 +65,11 @@ h2 {
   font-size: 16px;
   padding: 8px 12px;
   cursor: pointer;
-}
-.btn-large {
-  display: block;
-  width: 100%;
+
+  &-large {
+    display: block;
+    width: 100%;
+  }
 }
 
 .setting {
@@ -84,4 +88,4 @@ h2 {
   border-radius: 5px;
   padding: 1rem 2rem;
   margin: 0.5rem;
-}/*# sourceMappingURL=style.css.map */
+}
