@@ -25,3 +25,24 @@ const addNewNote = (text = "") => {
   const textArea = note.querySelector("textarea");
   textArea.value = text;
   main.innerHTML = marked(text);
+deleteButton.addEventListener("click", () => {
+    note.remove();
+    updateLocalStorage();
+  });
+  editButton.addEventListener("click", () => {
+    main.classList.toggle("hidden");
+    textArea.classList.toggle("hidden");
+  });
+  textArea.addEventListener("input", (e) => {
+    const { value } = e.target;
+    main.innerHTML = marked(value);
+    updateLocalStorage();
+  });
+  document.body.appendChild(note);
+};
+
+addButton.addEventListener("click", () => addNewNote());
+
+if (notes) {
+  notes.forEach((note) => addNewNote(note));
+}
