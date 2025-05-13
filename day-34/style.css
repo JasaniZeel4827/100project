@@ -30,3 +30,32 @@ h4 {
   animation: hide 0.2s ease-out;
 }
 
+@keyframes hide {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+}
+
+.final {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  text-align: center;
+}
+
+
+#replay {
+  background-color: #3498db;
+  text-transform: uppercase;
+  color: #fff;
+  font-family: inherit;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  padding: 0.5rem;
+  cursor: pointer;
+}
