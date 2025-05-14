@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toLowerCase() Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+        }
+        #output {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h2>Convert Text to Lowercase</h2>
+    <input type="text" id="textInput" placeholder="Enter text here">
+    <button id="convert-btn" onclick="convertToLower()">Convert</button>
+    <p id="output"></p>
+
+    <script>
+        function convertToLower() {
+            const inputText = document.getElementById('textInput').value;
+            const lowerText = inputText.toLowerCase();
+            document.getElementById('output').textContent = lowerText;
+        }
+    </script>
+</body>
+</html>
