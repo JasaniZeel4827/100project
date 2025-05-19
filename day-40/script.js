@@ -15,3 +15,4 @@ const createBoxes = () => {
 createBoxes();
 
 button.addEventListener("click", () => boxesContainer.classList.toggle("big"));
+button.addEventListener("click", () => boxesContainer.classList.toggle("big"));
