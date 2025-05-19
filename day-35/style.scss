@@ -1,10 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,8 +16,7 @@ body {
 img {
   width: 500px;
   height: 500px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .carousel {
@@ -44,10 +44,12 @@ img {
   padding: 0.5rem;
   cursor: pointer;
   width: 49.5%;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &:focus {
+    outline: none;
+  }
 }
-.btn:hover {
-  opacity: 0.9;
-}
-.btn:focus {
-  outline: none;
-}/*# sourceMappingURL=style.css.map */
