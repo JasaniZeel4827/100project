@@ -24,11 +24,11 @@ export const About: React.FC = () => {
             <h2 className="text-3xl md:text-4xl font-bold">About Me</h2>
             
             <p className="text-neutral-700 dark:text-neutral-300">
-              I'm a software engineer and startup founder with over 8 years of experience building innovative web and mobile applications. I specialize in creating high-performance, user-friendly experiences that solve real problems.
+              I'm a Data Scientist and startup founder with over 8 years of experience building innovative web and mobile applications. I specialize in creating high-performance, user-friendly experiences that solve real problems.
             </p>
             
             <p className="text-neutral-700 dark:text-neutral-300">
-              My journey began as a frontend developer, but I quickly expanded my skills to include backend development, DevOps, and product design. I'm passionate about the entire product development lifecycle and creating tools that make developers' lives easier.
+              My journey began as a data scientist, but I quickly expanded my skills to include backend development, DevOps, and product design. I'm passionate about the entire product development lifecycle and creating tools that make developers' lives easier.
             </p>
             
             <div className="flex items-center space-x-4 pt-2">

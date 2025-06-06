@@ -17,7 +17,7 @@ export const Hero: React.FC = () => {
             className="space-y-6"
           >
             <div className="inline-block px-4 py-2 bg-accent-100 text-accent-700 dark:bg-accent-900 dark:text-accent-300 rounded-full font-medium text-sm">
-              Developer & Startup Founder
+              Data Scientist & Startup Founder
             </div>
             
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-black dark:text-white leading-tight">
