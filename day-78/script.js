@@ -1,21 +1,57 @@
-<!-- Reference: https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition -->
+const messageElement = document.getElementById("msg");
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Speak Number Guess</title>
-  </head>
-  <body>
-    <img
-      src="https://i.ibb.co/Kb6SkTm/8399350-mic-microphone-audio-icon.png"
-      alt="Speak"
-    />
-    <h1>Guess a Number Between 1 - 100</h1>
-    <h2>Speak the number into your microphone</h2>
-    <div id="msg" class="msg"></div>
-    <script src="script.js"></script>
-  </body>
-</html>
+const randomNumber = getRandomNumber();
+
+window.SpeechRecognition =
+  window.SpeechRecognition || window.webkitSpeechRecognition;
+let recognition = new window.SpeechRecognition();
+recognition.lang = "en-US";
+recognition.start();
+
+function getRandomNumber() {
+  return Math.floor(Math.random() * 100) + 1;
+}
+
+function onSpeak(event) {
+  const message = event.results[0][0].transcript;
+  writeMessage(message);
+  checkNumber(message);
+}
+
+function writeMessage(message) {
+  messageElement.innerHTML = `
+    <div>You said: </div>
+    <span class="box">${message}</span>
+  `;
+}
+
+function checkNumber(message) {
+  const number = +message;
+  if (Number.isNaN(number)) {
+    messageElement.innerHTML += "<div>That is not a valid number</div>";
+    return;
+  }
+  if (number > 100 || number < 1) {
+    messageElement.innerHTML += "<div>Number must be between 1 and 100</div>";
+    return;
+  }
+  if (number === randomNumber) {
+    document.body.innerHTML = `
+          <h2>Congrats! You have guessed the number! <br><br>
+          It was ${number}</h2>
+          <button class="play-again" id="play-again">Play Again</button>
+        `;
+  } else if (number > randomNumber) {
+    messageElement.innerHTML += "<div>GO LOWER</div>";
+  } else {
+    messageElement.innerHTML += "<div>GO HIGHER</div>";
+  }
+}
+
+// Event Listeners
+recognition.addEventListener("result", onSpeak);
+recognition.addEventListener("end", () => recognition.start());
+
+document.body.addEventListener("click", (e) => {
+  if (e.target.id == "play-again") history.go(0);
+});
