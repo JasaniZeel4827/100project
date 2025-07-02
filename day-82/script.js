@@ -1,1 +1,1 @@
-let rellax = 
+let rellax = new Rellax(".rellax")
