@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Lexend", sans-serif;
+  background-color: #362a2b;
+  color: #e5ebf3;
+}
+
+.slider {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.slide.current {
+  opacity: 1;
+}
+
+.slide .content {
+  position: absolute;
+  bottom: -300px;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  background-color: rgba(229, 235, 243, 0.8);
+  color: #495b73;
+  padding: 1rem;
+  line-height: 1.3;
+}
+
+.slide .content h1 {
+  margin-bottom: 0.625rem;
+  color: #362a2b;
+  font-size: 1.5rem;
+}
+
+.slide.current .content {
+  opacity: 1;
+  transform: translateY(-300px);
+  transition: all 0.7s ease-in-out;
+}
+
+.slide:first-child {
+  background: url("https://images.unsplash.com/photo-1492633423870-43d1cd2775eb?q=80&w=2070")
+    no-repeat center top/cover;
+}
+
+.slide:nth-child(2) {
+  background: url("https://images.unsplash.com/photo-1471565661762-b9dfae862dbe?q=80&w=2070")
+    no-repeat center top/cover;
+}
+
+.slide:nth-child(3) {
+  background: url("https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?q=80&w=2071")
+    no-repeat center top/cover;
+}
+
+.slide:nth-child(4) {
+  background: url("https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=2070")
+    no-repeat center top/cover;
+}
+
+.slide:nth-child(5) {
+  background: url("https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?q=80&w=2070")
+    no-repeat center top/cover;
+}
+
+.slide:nth-child(6) {
+  background: url("https://images.unsplash.com/photo-1463453091185-61582044d556?q=80&w=2070")
+    no-repeat center center/cover;
+}
+
+.buttons button#prev {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+}
+
+.buttons button#next {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+}
+
+.buttons button {
+  border: 2px solid #e5ebf3;
+  background-color: transparent;
+  color: #e5ebf3;
+  cursor: pointer;
+  padding: 13px 15px;
+  border-radius: 50%;
+  outline: none;
+}
+
+.buttons button:hover {
+  background-color: #e5ebf3;
+  color: #362a2b;
+}
+
+@media (min-width: 640px) and (min-height: 640px) {
+  .slide .content {
+    bottom: 70px;
+    left: -600px;
+    width: 600px;
+    padding: 2rem;
+    line-height: 1.6;
+  }
+
+  .slide .content h1 {
+    font-size: 2rem;
+  }
+
+  .slide.current .content {
+    transform: translateX(600px);
+  }
+}
