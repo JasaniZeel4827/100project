@@ -28,27 +28,21 @@ body {
   font-weight: bold;
   text-transform: uppercase;
 }
-
-.purple {
+.btn.purple {
   background-color: purple;
 }
-
-.blue {
+.btn.blue {
   background-color: blue;
 }
-
-.red {
+.btn.red {
   background-color: red;
 }
-
-.green {
+.btn.green {
   background-color: green;
 }
-
-.yellow {
+.btn.yellow {
   background-color: yellow;
 }
-
-.teal {
+.btn.teal {
   background-color: teal;
-}
+}/*# sourceMappingURL=style.css.map */
