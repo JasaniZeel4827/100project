@@ -1,240 +1,128 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
+function init() {
+  // slider
+  const slides = document.querySelectorAll(".slide");
+  const pages = document.querySelectorAll(".page");
+  const backgrounds = [
+    `radial-gradient(#2B3760, #0B1023)`,
+    `radial-gradient(#4E3022, #161616)`,
+    `radial-gradient(#4E4342, #161616)`,
+  ];
+  let current = 0;
+  let scrollSlide = 0;
 
-:root {
-  --white: rgba(255, 255, 255, 0.9);
-}
+  slides.forEach((slide, index) => {
+    slide.addEventListener("click", function () {
+      changeDots(this);
+      nextSlide(index);
+      scrollSlide = index;
+    });
+  });
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: "Poppins", sans-serif;
-  font-weight: 200;
-}
-
-.portfolio {
-  color: var(--white);
-  background: radial-gradient(rgba(43, 55, 96, 1), rgba(11, 16, 35, 1));
-}
-
-/* header */
-
-nav {
-  min-height: 10vh;
-  width: 90%;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 0;
-}
-
-.logo {
-  font-size: 1.25rem;
-}
-
-/* main */
-
-.page {
-  min-height: 90vh;
-  display: grid;
-  grid-template-columns: 5% 1fr 1fr 1fr 5%;
-}
-
-.chef,
-.hairstyle {
-  position: absolute;
-  bottom: 0%;
-  left: 0%;
-  width: 100%;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.hero {
-  overflow: hidden;
-  height: 500px;
-  align-self: center;
-  justify-self: center;
-  display: flex;
-}
-
-.hero img {
-  height: 500px;
-  transition: transform 0.3s ease-out;
-}
-
-.model-right {
-  transform: translate(0%, 10%);
-}
-
-.model-left {
-  transform: translate(0%, -10%);
-}
-
-.hero:hover .model-right,
-.hero:hover .model-left {
-  transform: translate(0%, 0%);
-}
-
-.details {
-  grid-column: 2/3;
-  align-self: end;
-}
-
-.details h1 {
-  font-size: 4rem;
-  font-weight: 500;
-}
-
-.details h2 {
-  font-size: 2.625rem;
-  font-weight: 400;
-  padding: 20px 0;
-}
-
-.details p {
-  font-size: 1.5rem;
-  padding: 20px 0 50px;
-}
-
-/* slider */
-
-.pages {
-  position: absolute;
-  right: 5%;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.pages > div {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.pages h3 {
-  font-size: 1.5rem;
-  padding: 30px;
-}
-
-.pages svg {
-  cursor: pointer;
-  opacity: 0.5;
-  transform: scale(2);
-}
-
-.pages svg:hover {
-  animation: dot 0.5s ease-in-out infinite alternate;
-}
-
-.pages svg.active {
-  opacity: 0.9;
-}
-
-@keyframes dot {
-  0% {
-    transform: scale(2);
-  }
-  100% {
-    transform: scale(4);
-  }
-}
-
-/* menu */
-
-.nav-open {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 50vh;
-  background-color: #fff;
-  color: #000;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: 5% 1fr 1fr 5%;
-  justify-items: center;
-  align-items: center;
-  text-align: center;
-  transform: translateY(-101%);
-}
-
-.contact {
-  grid-column: 2/3;
-}
-
-.nav-open h3 {
-  font-size: 1.75rem;
-  padding-bottom: 40px;
-}
-
-.nav-open p {
-  font-size: 1.125rem;
-}
-
-.social-links {
-  display: flex;
-  gap: 1.25rem;
-}
-
-.logo,
-.menu {
-  z-index: 2;
-}
-
-.menu {
-  cursor: pointer;
-}
-
-/* media queries */
-
-@media (max-width: 1024px) {
-  .page {
-    grid-template-columns: 5% 1fr 5%;
-    grid-template-rows: 2fr 1fr;
-    align-items: center;
+  function changeDots(dot) {
+    slides.forEach((slide) => slide.classList.remove("active"));
+    dot.classList.add("active");
   }
 
-  .hero {
-    grid-column: 2/3;
-    height: auto;
+  function nextSlide(pageNumber) {
+    const nextPage = pages[pageNumber];
+    const currentPage = pages[current];
+    const nextLeft = nextPage.querySelector(".hero .model-left");
+    const nextRight = nextPage.querySelector(".hero .model-right");
+    const currentLeft = currentPage.querySelector(".hero .model-left");
+    const currentRight = currentPage.querySelector(".hero .model-right");
+    const nextText = nextPage.querySelector(".details");
+    const portfolio = document.querySelector(".portfolio");
+
+    const tl = new TimelineMax({
+      // disable clicks during animations
+      onStart: function () {
+        slides.forEach((slide) => (slide.style.pointerEvents = "none"));
+      },
+      onComplete: function () {
+        slides.forEach((slide) => (slide.style.pointerEvents = "all"));
+      },
+    });
+
+    tl.fromTo(currentLeft, 0.3, { y: "-10%" }, { y: "-100%" })
+      .fromTo(currentRight, 0.3, { y: "10%" }, { y: "-100%" }, "-=0.2")
+      .to(portfolio, 0.3, { backgroundImage: backgrounds[pageNumber] })
+      .fromTo(
+        currentPage,
+        0.3,
+        { opacity: 1, pointerEvents: "all" },
+        { opacity: 0, pointerEvents: "none" }
+      )
+      .fromTo(
+        nextPage,
+        0.3,
+        { opacity: 0, pointerEvents: "none" },
+        { opacity: 1, pointerEvents: "all" },
+        "-=0.6"
+      )
+      .fromTo(nextLeft, 0.3, { y: "-100%" }, { y: "-10%" }, "-=0.6")
+      .fromTo(nextRight, 0.3, { y: "-100%" }, { y: "10%" }, "-=0.8")
+      .fromTo(nextText, 0.3, { opacity: 0, y: 0 }, { opacity: 1, y: 0 })
+      .set(nextLeft, { clearProps: "all" })
+      .set(nextRight, { clearProps: "all" });
+    current = pageNumber;
+  }
+  document.addEventListener("wheel", throttle(scrollChange, 1500));
+  document.addEventListener("touchmove", throttle(scrollChange, 1500));
+
+  function swithDots(dotNumber) {
+    const activeDot = document.querySelectorAll(".slide")[dotNumber];
+    slides.forEach((slide) => slide.classList.remove("active"));
+    activeDot.classList.add("active");
   }
 
-  .hero img {
-    height: 500px;
+  function scrollChange(e) {
+    e.deltaY > 0 ? (scrollSlide += 1) : (scrollSlide -= 1);
+    // reset
+    if (scrollSlide > 2) scrollSlide = 0;
+    if (scrollSlide < 0) scrollSlide = 2;
+    swithDots(scrollSlide);
+    nextSlide(scrollSlide);
   }
 
-  .details {
-    grid-row: 2/3;
-    grid-column: 2/3;
-    text-align: center;
-  }
+  //   menu
+  const hamburger = document.querySelector(".menu");
+  const hamburgerLines = document.querySelectorAll(".menu line");
+  const navOpen = document.querySelector(".nav-open");
+  const contact = document.querySelector(".contact");
+  const social = document.querySelector(".social");
+  const logo = document.querySelector(".logo");
 
-  .details h1 {
-    font-size: 3rem;
-  }
+  const tl = new TimelineMax({ paused: true, reversed: true });
 
-  .details h2 {
-    font-size: 2.375rem;
-  }
+  tl.to(navOpen, 0.5, { y: 0 })
+    .fromTo(contact, 0.5, { opacity: 0, y: 10 }, { opacity: 1, y: 0 }, "-=0.1")
+    .fromTo(social, 0.5, { opacity: 0, y: 10 }, { opacity: 1, y: 0 }, "-=0.5")
+    .fromTo(logo, 0.2, { color: "var(--white)" }, { color: "black" }, "-=1")
+    .fromTo(
+      hamburgerLines,
+      0.2,
+      { stroke: "var(--white)" },
+      { stroke: "black" },
+      "-=1"
+    );
+
+  hamburger.addEventListener("click", () => {
+    tl.reversed() ? tl.play() : tl.reverse();
+  });
 }
 
-@media (max-width: 768px) {
-  .hero img {
-    height: 400px;
-  }
-
-  .details h1 {
-    font-size: 2.375rem;
-  }
-
-  .details h2 {
-    font-size: 1.75rem;
-  }
+// avoid multiple firing
+function throttle(func, limit) {
+  let inThrottle;
+  return function () {
+    const args = arguments;
+    const context = this;
+    if (!inThrottle) {
+      func.apply(context, args);
+      inThrottle = true;
+      setTimeout(() => (inThrottle = false), limit);
+    }
+  };
 }
+
+init();
