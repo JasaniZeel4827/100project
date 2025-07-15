@@ -15,6 +15,8 @@ function init() {
       changeDots(this);
       nextSlide(index);
       scrollSlide = index;
+
+
     });
   });
 
@@ -51,6 +53,7 @@ function init() {
         0.3,
         { opacity: 1, pointerEvents: "all" },
         { opacity: 0, pointerEvents: "none" }
+        
       )
       .fromTo(
         nextPage,
