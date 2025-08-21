@@ -34,6 +34,18 @@
       text-align: center;
       border-radius: 0.625rem;
       overflow: hidden;
+      h4 {
+        margin: 2rem 0rem 1rem;
+      }
+
+      p {
+        padding: 2rem;
+        color: #686868;
+      }
+
+      img {
+        object-fit: cover;
+      }
 
       
     }
